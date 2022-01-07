@@ -90,14 +90,14 @@ void toh(int n)
     }
   }
 
-  std::cout << "Peg C:\n";
+  std::cout << "Peg C (left is top of stack)\n";
   t3->display();
   
 }
 int main()
 {
     int n;
-    cout << "enter the number of disks";
+    cout << "Enter number of disks: ";
     cin>>n;
     toh(n);
     return 0;
