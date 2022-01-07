@@ -32,9 +32,15 @@ void toh(int n)
       if (!t2->empty()) {discB = ((Disc*)t2->top())->getSize();}
       if (!t3->empty()) {discC = ((Disc*)t3->top())->getSize();}
 
+
       // AB 
       if (discA > discB) {t1->push(t2->pop());}
       else if (discA < discB) {t2->push(t1->pop());}
+
+      std::cout << "===================\n";
+      std::cout << "-"; t1->display();
+      std::cout << "-"; t2->display();
+      std::cout << "-"; t3->display();
 
       discA = n+1; discB = n+1; discC = n+1;
       if (!t1->empty()) {discA = ((Disc*)t1->top())->getSize();}
@@ -45,6 +51,11 @@ void toh(int n)
       if (discA > discC) {t1->push(t3->pop());}
       else if (discA < discC) {t3->push(t1->pop());}
 
+      std::cout << "===================\n";
+      std::cout << "-"; t1->display();
+      std::cout << "-"; t2->display();
+      std::cout << "-"; t3->display();
+
       discA = n+1; discB = n+1; discC = n+1;
       if (!t1->empty()) {discA = ((Disc*)t1->top())->getSize();}
       if (!t2->empty()) {discB = ((Disc*)t2->top())->getSize();}
@@ -53,6 +64,11 @@ void toh(int n)
       // BC 
       if (discB > discC) {t2->push(t3->pop());}
       if (discB < discC) {t3->push(t2->pop());}
+
+      std::cout << "===================\n";
+      std::cout << "-"; t1->display();
+      std::cout << "-"; t2->display();
+      std::cout << "-"; t3->display();
     }
     
     // Case n odd
@@ -68,6 +84,11 @@ void toh(int n)
       else if (discA < discC) {t3->push(t1->pop());}
       if (t1->empty() && t2->empty()) {break;}
 
+      std::cout << "===================\n";
+      std::cout << "-"; t1->display();
+      std::cout << "-"; t2->display();
+      std::cout << "-"; t3->display();
+
       discA = n+1; discB = n+1; discC = n+1;
       if (!t1->empty()) {discA = ((Disc*)t1->top())->getSize();}
       if (!t2->empty()) {discB = ((Disc*)t2->top())->getSize();}
@@ -78,6 +99,11 @@ void toh(int n)
       else if (discA < discB) {t2->push(t1->pop());}
       if (t1->empty() && t2->empty()) {break;}
 
+      std::cout << "===================\n";
+      std::cout << "-"; t1->display();
+      std::cout << "-"; t2->display();
+      std::cout << "-"; t3->display();
+
       discA = n+1; discB = n+1; discC = n+1;
       if (!t1->empty()) {discA = ((Disc*)t1->top())->getSize();}
       if (!t2->empty()) {discB = ((Disc*)t2->top())->getSize();}
@@ -87,9 +113,15 @@ void toh(int n)
       if (discB > discC) {t2->push(t3->pop());}
       if (discB < discC) {t3->push(t2->pop());}
       if (t1->empty() && t2->empty()) {break;}
+
+      std::cout << "===================\n";
+      std::cout << "-"; t1->display();
+      std::cout << "-"; t2->display();
+      std::cout << "-"; t3->display();
     }
   }
 
+  std::cout << "\n FINISHED \n";
   std::cout << "Peg C (left is top of stack)\n";
   t3->display();
   
