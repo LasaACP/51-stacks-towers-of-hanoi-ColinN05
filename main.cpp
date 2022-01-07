@@ -124,6 +124,15 @@ void toh(int n)
   std::cout << "\n FINISHED \n";
   std::cout << "Peg C (left is top of stack)\n";
   t3->display();
+
+  // Delete allocated disks.
+  for (int i = 0; i < n; i++)
+    delete (Disc*)t3->pop();
+
+  // Free stack memory
+  delete t1;
+  delete t2;
+  delete t3;
   
 }
 int main()
